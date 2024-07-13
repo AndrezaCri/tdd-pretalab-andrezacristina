@@ -8,18 +8,35 @@ describe('Queue', () => {
   })
 
   it('Deve ser capaz de calcular o tamanho da fila', () => {
-    // Seu código aqui
+    const queue = new Queue();
+    queue.enqueue('elemento1');
+    queue.enqueue('elemento2');
+
+    expect(queue.size()).toBe(2);
   })
 
   it('Deve ser capaz de adicionar um item na fila', () => {
-   // Seu código aqui
-  })
+    const queue = new Queue();
+    queue.enqueue('elemento1');
+
+    expect(queue.elements).toEqual(['elemento1']);
+  });
+  
 
   it('Deve escolher o primeiro item da fila', () => {
-    // Seu código aqui
+    const queue = new Queue();
+    queue.enqueue('elemento1');
+    queue.enqueue('elemento2');
+
+    expect(queue.peek()).toBe('elemento1');
   })
 
   it('Deve remover o primeiro item da fila', () => {
-    // Seu código aqui
+    const queue = new Queue();
+    queue.enqueue('elemento1');
+    queue.enqueue('elemento2');
+
+    expect(queue.dequeue()).toBe('elemento1');
+    expect(queue.elements).toEqual(['elemento2']);
   })
 })
